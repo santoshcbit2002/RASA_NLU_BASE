@@ -1,11 +1,5 @@
 {
   "rasa_nlu_data": {
-    "lookup_tables": [
-        {
-            "name": "location",
-            "elements": "./data/locationlist.txt"
-        }
-    ],
     "regex_features": [
       {
         "name": "zipcode",
@@ -101,6 +95,11 @@
         "entities": []
       },
       {
+        "text": "y",
+        "intent": "affirm",
+        "entities": []
+      },
+      {
         "text": "yeah",
         "intent": "affirm",
         "entities": []
@@ -166,7 +165,7 @@
         "entities": [
           {
             "start": 26,
-            "end": 33,
+            "end": 34,
             "value": "Amravati",
             "entity": "location"
           }
@@ -178,374 +177,482 @@
         "entities": [
           {
             "start": 14,
-            "end": 20,
+            "end": 21,
             "value": "Croydon",
             "entity": "location"
           }
         ]
       },
-      ================================
+      
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants in croydon",
         "intent": "restaurant_search",
         "entities": [
           {
             "start": 14,
-            "end": 20,
-            "value": "Croydon",
-            "entity": "location"
-          }
-        ]
-      },
-      {
-        "text": "restaurant in Croydon",
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 14,
-            "end": 20,
+            "end": 21,
             "value": "Croydon",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant in Surrey",
         "intent": "restaurant_search",
         "entities": [
           {
             "start": 14,
             "end": 20,
-            "value": "Croydon",
+            "value": "Surrey",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant in mumbai",
         "intent": "restaurant_search",
         "entities": [
           {
             "start": 14,
             "end": 20,
-            "value": "Croydon",
+            "value": "mumbai",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants around Kensington",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 19,
+            "end": 29,
+            "value": "Kensington",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants from warasiguda",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 17,
+            "end": 27,
+            "value": "warasiguda",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants close to Hjkhjkhjkj",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Hjkhjkhjkj",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants close to Tangoooooo",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Tangoooooo",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants around Hhhhjjjkkl",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Hhhhjjjkkl",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants near Yyyyyyyyyy",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Yyyyyyyyyy",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "warasiguda Restaurants",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "warasiguda",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants from Kkkkkkkkkkk",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Kkkkkkkkkkk",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants from Eeettteeee",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Eeettteeee",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants from QQQqqqqqqq",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "QQQqqqqqqq",
+            "entity": "location"
+          }
+        ]
+      },
+ {
+        "text": "restaurants from Jjjjjjjjjj",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 17,
+            "end": 27,
+            "value": "Jjjjjjjjjj",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant from warasiguda",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 16,
+            "end": 26,
+            "value": "warasiguda",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants around baramulla",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 19,
+            "end": 28,
+            "value": "baramulla",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants in and around dera",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 26,
+            "end": 30,
+            "value": "dera",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant from Salt City",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 16,
+            "end": 25,
+            "value": "Salt City",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants from vadodara",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 17,
+            "end": 25,
+            "value": "vadodara",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant in patna",
         "intent": "restaurant_search",
         "entities": [
           {
             "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "end": 19,
+            "value": "patna",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants from Manik Nagar",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 17,
+            "end": 28,
+            "value": "Manik Nagar",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants in Jubliee",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 15,
+            "end": 22,
+            "value": "Jubliee",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants around goa",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 19,
+            "end": 22,
+            "value": "goa",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants around malay",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 19,
+            "end": 24,
+            "value": "malay",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants banglore",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
+            "start": 12,
             "end": 20,
-            "value": "Croydon",
+            "value": "banglore",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "warasiguda restaurants",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 0,
+            "end": 10,
+            "value": "warasiguda",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "kashmir restaurants",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 0,
+            "end": 7,
+            "value": "kashmir",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants in Addiscombe",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 15,
+            "end": 25,
+            "value": "Addiscombe",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "sohull restaurants",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 0,
+            "end": 6,
+            "value": "sohull",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants in kapral",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 15,
+            "end": 21,
+            "value": "kapral",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants around uppal",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 19,
+            "end": 24,
+            "value": "uppal",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurants near karkhana",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 17,
+            "end": 25,
+            "value": "karkhana",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "restaurant near market",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 16,
+            "end": 22,
+            "value": "market",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "near vijaywada ",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 5,
+            "end": 14,
+            "value": "vijaywada",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "in palika",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 3,
+            "end": 9,
+            "value": "palika",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "around patharghat",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 7,
+            "end": 17,
+            "value": "patharghat",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "from sudoku",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 5,
+            "end": 11,
+            "value": "sudoku",
             "entity": "location"
           }
         ]
       },
       {
-        "text": "restaurant in Croydon",
+        "text": "in wilsden",
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 14,
-            "end": 20,
-            "value": "Croydon",
+            "start": 3,
+            "end": 10,
+            "value": "wilsden",
             "entity": "location"
           }
         ]
       },
-      =========
+      {
+        "text": "near Clapham",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 5,
+            "end": 11,
+            "value": "Clapham",
+            "entity": "location"
+          }
+        ]
+      },
+      
       {
         "text": "show me chinese restaurants",
         "intent": "restaurant_search",
@@ -576,6 +683,759 @@
           }
         ]
       },
+ {
+        "text": " dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 1,
+            "end": 20,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": " dshhg-dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 1,
+            "end": 20,
+            "value": "dshhg-dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhgddshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhgddshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhg568dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 21,
+            "value": "dshhg568dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhg_679dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 22,
+            "value": "dshhg_679dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "234162436_yammer@bh.com",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 23,
+            "value": "234162436_yammer@bh.com",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhg0dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhg0dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "Ace01-dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace01-dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace011dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace011dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace013dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace013dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace019dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace019dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace016dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace016dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace012dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace012dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace017dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace017dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace01ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace01ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace01rtshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace01rtshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace02opshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace02opshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace03uyshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace03uyshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace04klshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace04klshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace05GHshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace05GHshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace06ABshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace06ABshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace07SHjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace07SHjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace08LDshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace08LDshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace09LDshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace09LDdshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace10ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace10ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace11ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace11ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace12ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace12ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace13ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace13ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace14ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace14ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "Ace15ldshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace15ldshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "Ace01@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 13,
+            "value": "Ace01@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+{
+        "text": "Ace012@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 14,
+            "value": "Ace012@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace0123@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "Ace0123@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace01234@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 16,
+            "value": "Ace01234@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace012345@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "Ace012345@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace0123456@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 18,
+            "value": "Ace0123456@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace01234567@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace01234567@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace012345678@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 20,
+            "value": "Ace012345678@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace0123456789@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 21,
+            "value": "Ace0123456789@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "Ace0123456789a@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 22,
+            "value": "Ace0123456789a@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+
+ {
+        "text": "Ace022dshjh@jda.sdh is my email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "Ace022dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "it is dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 6,
+            "end": 25,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "yes dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 4,
+            "end": 23,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "email is dddddadshjh@jda.com",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 9,
+            "end": 28,
+            "value": "dddddadshjh@jda.com",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "email id 010101aaa@jda.com",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 9,
+            "end": 26,
+            "value": "010101aaa@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "gtxgtxgtxgtx@jda.sdh.gt",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 23,
+            "value": "gtxgtxgtxgtx@jda.sdh.gt",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhg--0909dshjh@jda.com",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 24,
+            "value": "dshhg--0909dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "my email id is hjhjhjhjhjh@jda.com",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 15,
+            "end": 34,
+            "value": "hjhjhjhjhjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "dshhg.dshjh@jda.sdh is ma email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg.dshjh@jda.sdh is ma email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg.1@jda.sdh is ma email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 15,
+            "value": "dshhg.1@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg123@jda.sdh is the email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 16,
+            "value": "dshhg123@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg1234h@jda.sdh .... email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 17,
+            "value": "dshhg1234h@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg12345h@jda.sdh ...is my email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhg12345h@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg123456h@jda.sdh is ma email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 20,
+            "value": "dshhg123456h@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+{
+        "text": "dshhg1234567h@jda.sdh is ma email id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 21,
+            "value": "dshhg123456h@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {
+        "text": "dshhg9dshjh@jda.sdh is my id",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 0,
+            "end": 19,
+            "value": "dshhg9dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "that's ... dshhg8dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 11,
+            "end": 30,
+            "value": "dshhg8dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "that's dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 7,
+            "end": 26,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+
+ {
+        "text": "ok dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 3,
+            "end": 22,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
+ {    
+        "text": "k dshhg.dshjh@jda.sdh",
+        "intent": "get_emailid",
+        "entities": [
+          {
+            "start": 2,
+            "end": 21,
+            "value": "dshhg.dshjh@jda.sdh",
+            "entity": "emailid"
+          }
+        ]
+      },
       {
         "text": "dshhg.dshjh@jda.sdh",
         "intent": "get_emailid",
@@ -601,34 +1461,25 @@
           }
         ]
       },
-
-
       {
         "text": "dshhg_dshj.h@jda.sdh",
         "intent": "get_emailid",
         "entities": [
           {
             "start": 0,
-            "end": 19,
+            "end": 20,
             "value": "dshhg_dshj.h@jda.sdh",
             "entity": "emailid"
           }
         ]
       },
-
-
-
-
-
-
-
     {
         "text": "my email id - asywbv.diubmwc@suyjb.djagjb",
         "intent": "get_emailid",
         "entities": [
           {
             "start": 14,
-            "end": 40,
+            "end": 41,
             "value": "asywbv.diubmwc@suyjb.djagjb",
             "entity": "emailid"
           }
@@ -640,7 +1491,7 @@
         "entities": [
           {
             "start": 0,
-            "end": 19,
+            "end": 20,
             "value": "iujwcb@asiknas.csdka",
             "entity": "emailid"
           }
@@ -658,7 +1509,7 @@
         "entities": [
           {
             "start": 18,
-            "end": 22,
+            "end": 23,
             "value": "delhi",
             "entity": "location"
           }
@@ -915,6 +1766,7 @@
           }
         ]
       },
+
       {
         "text": "I am looking for mexican indian fusion",
         "intent": "restaurant_search",
@@ -1016,7 +1868,7 @@
         "entities": []
       },
       {
-        "text": "find a restaurant in pune range 300 - 500",
+        "text": "find a restaurant in pune",
         "intent": "restaurant_search",
         "entities": [
           {
@@ -1024,18 +1876,6 @@
             "end": 25,
             "value": "pune",
             "entity": "location"
-          },
-          {
-            "start": 32,
-            "end": 35,
-            "value": "300",
-            "entity": "minimumamt"
-          },
-          {
-            "start": 38,
-            "end": 41,
-            "value": "pune",
-            "entity": "maximumamt"
           }
         ]
       },
@@ -1118,7 +1958,7 @@
         "entities": [
           {
             "start": 0,
-            "end": 8,
+            "end": 9,
             "value": "Hyderabad",
             "entity": "location"
           }
@@ -1131,7 +1971,7 @@
         "entities": [
           {
             "start": 0,
-            "end": 7,
+            "end": 8,
             "value": "banglore",
             "entity": "location"
           }
@@ -1155,8 +1995,164 @@
         "entities": [
           {
             "start": 0,
-            "end": 9,
+            "end": 10,
             "value": "Chandigarh",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "trtrtrt",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "trtrtrt",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "alalalalal",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 10,
+            "value": "alalalalal",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "malemalemale",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "malemalemale",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "abcdefg",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "abcdefg",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "RENUGUNTA",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "RENUGUNTA",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "BhALLA",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "BhALLA",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Oomerul",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "Oomerul",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "badshaho",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 8,
+            "value": "badshaho",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "umberl",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "umberl",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "Swampy",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 6,
+            "value": "Swampy",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "tetra-hedron",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 12,
+            "value": "tetra-hedron",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "mallesh",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 7,
+            "value": "mallesh",
+            "entity": "location"
+          }
+        ]
+      },
+      {
+        "text": "yakult-hu",
+        "intent": "restaurant_search",
+        "entities": [
+          {
+            "start": 0,
+            "end": 9,
+            "value": "yakult-hu",
             "entity": "location"
           }
         ]
