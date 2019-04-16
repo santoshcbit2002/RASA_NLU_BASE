@@ -3,10 +3,23 @@ slots:
     type: text
   cuisine:
     type: text
+  budget:
+      type: categorical
+      values:
+      - low
+      - medium
+      - high
+  send_mail:
+    type: bool
+  email_address:
+    type: text
 
 entities:
 - location
 - cuisine
+- budget
+- send_mail
+- email_address
 
 intents:
  - greet
@@ -15,7 +28,7 @@ intents:
  - goodbye
  - thankyou
  - restaurant_search
-
+ - send_email
 
 templates:
   utter_greet:
@@ -26,22 +39,41 @@ templates:
     - "goodbye :("
     - "Bye-bye"
   utter_default:
-    - "default message"
+    - "I am not sure how to help with that. I can only search for restaurants for you"
+    - "Apologies! I did not quite get that. I can only search for restaurants for you. Can you please try again"
+    - "I'm afraid i'm a little too dumb to do anything else apart from searching restaurants for you"
   utter_ask_cuisine: 
-    - text: "what kind of cuisine would you like?"
+    - text: "What kind of cuisine would you prefer?"
       buttons:
       - title: "Chinese"
-        payload: "Chinese"
+        payload: "chinese"
+      - title: "Mexican"
+        payload: "mexican"
       - title: "Italian"
-        payload: "Italian"
+        payload: "italian"
+      - title: "American"
+        payload: "american"
       - title: "South Indian"
-        payload: "South Indian"
+        payload: "south_indian"
       - title: "North Indian"
-        payload: "North Indian"
+        payload: "north_indian"
+  utter_ask_budget: 
+    - text: "What price range are you looking at?"
+      buttons:
+      - title: "Lesser than Rs. 300"
+        payload: "low"
+      - title: "Rs. 300 to 700"
+        payload: "medium"
+      - title: "More than 700"
+        payload: "high"
   utter_ask_howcanhelp:
     - "how can I help you?"
   utter_ask_location:
     - "In what location?"
+  utter_ask_sendmail:
+    - text: "Do you want the search results to be e-mailed?"
+  utter_ask_emailaddress:
+    - "Which email address should I send the results to?"
 
 actions:
 - utter_greet
@@ -50,4 +82,8 @@ actions:
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_sendmail
+- utter_ask_emailaddress
 - actions.ActionSearchRestaurants
+- actions.ActionSendEmail

@@ -3,8 +3,7 @@ import ast
 
 base_url = "https://developers.zomato.com/api/v2.1/"
 
-
-def initialize_app(config):
+def initialize_app(config={"user_key":"a41d5dc279267d7b3b720664090430ee"}):
     return Zomato(config)
 
 
@@ -216,7 +215,7 @@ class Zomato:
         return restaurant_details
 
 
-    def restaurant_search(self, query="", latitude="", longitude="", cuisines="", limit=5):
+    def restaurant_search(self, query="", latitude="", longitude="", cuisines="", sort=None, limit=5, offset=0):
         """
         Takes either query, latitude and longitude or cuisine as input.
         Returns a list of Restaurant IDs.
@@ -225,7 +224,15 @@ class Zomato:
         if str(limit).isalpha() == True:
             raise ValueError('LimitNotInteger')
         headers = {'Accept': 'application/json', 'user-key': self.user_key}
-        r = (requests.get(base_url + "search?q=" + str(query) + "&count=" + str(limit) + "&lat=" + str(latitude) + "&lon=" + str(longitude) + "&cuisines=" + str(cuisines), headers=headers).content).decode("utf-8")
+        url = base_url + "search?q=" + str(query) + "&count=" + str(limit) + "&lat=" + str(latitude) + "&lon=" + str(longitude) + "&cuisines=" + str(cuisines) + "&start=" + str(offset)
+        if sort is not None:
+            _sort = ""
+            _order = ""
+            for sort_key in sort:
+                _sort = sort_key
+                _order = sort[sort_key]
+            url = url + "&sort=" + str(_sort) + "&order=" + str(_order)
+        r = (requests.get(url, headers=headers).content).decode("utf-8")
         return r#a = ast.literal_eval(r)
 
 

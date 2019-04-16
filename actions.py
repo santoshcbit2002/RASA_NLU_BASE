@@ -4,32 +4,58 @@ from __future__ import unicode_literals
 
 from rasa_core.actions.action import Action
 from rasa_core.events import SlotSet
+import emailpy
+import zomato_utils
 import zomatopy
 import json
+
+zomato = zomatopy.initialize_app()
 
 class ActionSearchRestaurants(Action):
 	def name(self):
 		return 'action_restaurant'
 		
 	def run(self, dispatcher, tracker, domain):
-		config={ "user_key":"6ce88a5ec1419e335afa1c7f92f4b739"}
-		zomato = zomatopy.initialize_app(config)
-		loc = tracker.get_slot('location')
-		cuisine = tracker.get_slot('cuisine')
-		location_detail=zomato.get_location(loc, 1)
-		d1 = json.loads(location_detail)
-		lat=d1["location_suggestions"][0]["latitude"]
-		lon=d1["location_suggestions"][0]["longitude"]
-		cuisines_dict={'bakery':5,'chinese':25,'cafe':30,'italian':55,'biryani':7,'north indian':50,'south indian':85}
-		results=zomato.restaurant_search("", lat, lon, str(cuisines_dict.get(cuisine)), 5)
-		d = json.loads(results)
-		response=""
-		if d['results_found'] == 0:
-			response= "no results"
-		else:
-			for restaurant in d['restaurants']:
-				response=response+ "Found "+ restaurant['restaurant']['name']+ " in "+ restaurant['restaurant']['location']['address']+"\n"
-		
-		dispatcher.utter_message("-----"+response)
-		return [SlotSet('location',loc)]
 
+		location_name = tracker.get_slot('location')
+		cuisine = tracker.get_slot('cuisine')
+		budget = tracker.get_slot('budget')
+
+		location = zomato_utils.get_valid_location(location_name)
+
+		response = ""
+		if location_name['is_valid']:
+			top_5_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location, cuisine, budget)
+			if len(top_5_restaurants) == 0:
+				response = "No restaurants found in {} serving {} cuisine in {} budget".format(location_name, cuisine, budget)
+			else:
+				for restaurant in top_5_restaurants:
+					response=response+ "{} in {} has been rated {}\n".format(restaurant['name'], restaurant['address'], restaurant['user_rating'])
+		else:
+			response = "We do not operate in that area yet"
+		
+		dispatcher.utter_message(response)
+
+class ActionSendEmail(Action):
+	def name(self):
+		return 'action_sendemail'
+		
+	def run(self, dispatcher, tracker, domain):
+		location_name = tracker.get_slot('location')
+		cuisine = tracker.get_slot('cuisine')
+		budget = tracker.get_slot('budget')
+
+		location = zomato_utils.get_valid_location(location_name)
+		top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location, cuisine, budget, top_n=10)
+
+		email_address = tracker.get_slot('email_address')
+		subject = "[FOODIE] Restaurant search results for {} range restaurants serving {} cuisine in {}".format(budget, cuisine, location_name)
+		success = emailpy.send_mail(email_address, subject, top_10_restaurants)
+
+		response=""
+		if success:
+			response = "An email has been sent to {}. Please search the inbox for subject {}".format(email_address, subject)
+		else:
+			response = "Oops! Email could not be sent. Sorry for the inconvenience."
+		
+		dispatcher.utter_message(response)
