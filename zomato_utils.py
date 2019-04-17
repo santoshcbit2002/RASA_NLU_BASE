@@ -164,7 +164,13 @@ def get_top_restaurants_by_user_ratings(location, cuisine, budget, top_n=5):
         offset += limit
 
     top_sorted = sorted(restaurants, key=lambda x: float(x['user_rating']['aggregate_rating']), reverse = True)[:top_n]
-    return [{'name':restaurant['name'], 'address':restaurant['location']['address'], 'average_cost_for_two':restaurant['average_cost_for_two'], 'user_rating':restaurant['user_rating']['aggregate_rating']} for restaurant in top_sorted]
+    return [{
+      'name':restaurant['name'], \
+      'address':restaurant['location']['address'], \
+      'average_cost_for_two':restaurant['average_cost_for_two'], \
+      'user_rating':restaurant['user_rating']['aggregate_rating'], \
+      'url':restaurant['url'] \
+    } for restaurant in top_sorted]
 
 if __name__ == '__main__':
   location = get_valid_location('bengaluru')

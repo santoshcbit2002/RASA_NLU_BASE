@@ -24,7 +24,7 @@ class ActionSearchRestaurants(Action):
 		location = zomato_utils.get_valid_location(location_name)
 
 		response = ""
-		if location_name['is_valid']:
+		if location['is_valid']:
 			top_5_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location, cuisine, budget)
 			if len(top_5_restaurants) == 0:
 				response = "No restaurants found in {} serving {} cuisine in {} budget".format(location_name, cuisine, budget)
@@ -49,8 +49,8 @@ class ActionSendEmail(Action):
 		top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location, cuisine, budget, top_n=10)
 
 		email_address = tracker.get_slot('email_address')
-		subject = "[FOODIE] Restaurant search results for {} range restaurants serving {} cuisine in {}".format(budget, cuisine, location_name)
-		success = emailpy.send_mail(email_address, subject, top_10_restaurants)
+		subject = "[FOODIE] Restaurant search results for {} budget restaurants serving {} cuisine in {}".format(budget, cuisine, location_name)
+		success = emailpy.send_mail(email_address, subject, location_name, cuisine, budget, top_10_restaurants)
 
 		response=""
 		if success:

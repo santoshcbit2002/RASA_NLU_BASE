@@ -6,7 +6,11 @@ action_names:
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_sendmail
+- utter_ask_emailaddress
 - action_restaurant
+- action_sendemail
 actions:
 - utter_greet
 - utter_goodbye
@@ -14,12 +18,19 @@ actions:
 - utter_ask_howcanhelp
 - utter_ask_location
 - utter_ask_cuisine
+- utter_ask_budget
+- utter_ask_sendmail
+- utter_ask_emailaddress
 - actions.ActionSearchRestaurants
+- actions.ActionSendEmail
 config:
   store_entities_as_slots: true
 entities:
 - location
 - cuisine
+- budget
+- send_mail
+- email_address
 intents:
 - greet
 - affirm
@@ -27,31 +38,67 @@ intents:
 - goodbye
 - thankyou
 - restaurant_search
+- send_email
 slots:
+  budget:
+    initial_value: null
+    type: rasa_core.slots.CategoricalSlot
+    values:
+    - low
+    - medium
+    - high
   cuisine:
+    initial_value: null
+    type: rasa_core.slots.TextSlot
+  email_address:
     initial_value: null
     type: rasa_core.slots.TextSlot
   location:
     initial_value: null
     type: rasa_core.slots.TextSlot
+  send_mail:
+    initial_value: null
+    type: rasa_core.slots.BooleanSlot
 templates:
+  utter_ask_budget:
+  - buttons:
+    - payload: low
+      title: Lesser than Rs. 300
+    - payload: medium
+      title: Rs. 300 to 700
+    - payload: high
+      title: More than 700
+    text: What price range are you looking at?
   utter_ask_cuisine:
   - buttons:
-    - payload: Chinese
+    - payload: chinese
       title: Chinese
-    - payload: Italian
+    - payload: mexican
+      title: Mexican
+    - payload: italian
       title: Italian
-    - payload: South Indian
+    - payload: american
+      title: American
+    - payload: south_indian
       title: South Indian
-    - payload: North Indian
+    - payload: north_indian
       title: North Indian
-    text: what kind of cuisine would you like?
+    text: What kind of cuisine would you prefer?
+  utter_ask_emailaddress:
+  - text: Which email address should I send the results to?
   utter_ask_howcanhelp:
   - text: how can I help you?
   utter_ask_location:
   - text: In what location?
+  utter_ask_sendmail:
+  - text: Do you want the search results to be e-mailed?
   utter_default:
-  - text: default message
+  - text: I am not sure how to help with that. I can only search for restaurants for
+      you
+  - text: Apologies! I did not quite get that. I can only search for restaurants for
+      you. Can you please try again
+  - text: I'm afraid i'm a little too dumb to do anything else apart from searching
+      restaurants for you
   utter_goodbye:
   - text: goodbye :(
   - text: Bye-bye

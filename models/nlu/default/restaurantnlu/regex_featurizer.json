@@ -1,26 +1,10 @@
 [
     {
-        "name": "emailid",
-        "pattern": "([a-zA-Z0-9+._-]+@[a-zA-Z0-9._-]+.[a-zA-Z0-9_-])"
+        "name": "email_address",
+        "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
     },
     {
         "name": "greet",
         "pattern": "hey[^\\s]*"
-    },
-    {
-        "name": "location",
-        "pattern": "[a-zA-Z-]"
-    },
-    {
-        "name": "maximumamt",
-        "pattern": "[0-9]{3}"
-    },
-    {
-        "name": "minimumamt",
-        "pattern": "[0-9]{3}"
-    },
-    {
-        "name": "zipcode",
-        "pattern": "[0-9]{5}"
     }
 ]

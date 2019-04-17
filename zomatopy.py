@@ -1,9 +1,11 @@
+import global_config
 import requests
 import ast
 
 base_url = "https://developers.zomato.com/api/v2.1/"
+default_config={"user_key": global_config.get_config('zomato','api_key')}
 
-def initialize_app(config={"user_key":"a41d5dc279267d7b3b720664090430ee"}):
+def initialize_app(config=default_config):
     return Zomato(config)
 
 
