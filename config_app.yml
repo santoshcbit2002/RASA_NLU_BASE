@@ -1,0 +1,6 @@
+gmail:
+  username: [EMAIL]
+  password: [PASSWORD]
+
+zomato:
+  api_key: [ZOMATO API KEY]
