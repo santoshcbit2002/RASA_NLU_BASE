@@ -60,9 +60,9 @@ class SlackInput(HttpInputComponent):
 				text = messaging_events.get('text')
 				bot = messaging_events.get('bot_id')
 
-				is_text_email = re.match(r".*<mailto:([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)|([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>", text)
-				if is_text_email:
-					text = is_text_email.group(1)
+				text_has_email = re.match(r"<mailto:([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)|([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>", text)
+				if text_has_email:
+					text = text.replace(text_has_email.group(0), text_has_email.group(1))
 
 				if bot == None:
 					on_new_message(UserMessage(text, SlackBot(self.slack_verification_token, channel)))
