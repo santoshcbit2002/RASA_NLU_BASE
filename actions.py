@@ -29,8 +29,11 @@ class ActionSearchRestaurants(Action):
 			if len(top_5_restaurants) == 0:
 				response = "No restaurants found in {} serving {} cuisine in {} budget".format(location_name, cuisine, budget)
 			else:
+				index = 1
+				response = "Following are top 5 restaurants matching your preference in order of average user rating on zomato:\n\n"
 				for restaurant in top_5_restaurants:
-					response=response+ "{} in {} has been rated {}\n".format(restaurant['name'], restaurant['address'], restaurant['user_rating'])
+					response = response + "{}. {} in {} has been rated {}\n".format(index, restaurant['name'], restaurant['address'], restaurant['user_rating'])
+					index += 1
 		else:
 			response = "We do not operate in that area yet"
 		
@@ -54,7 +57,7 @@ class ActionSendEmail(Action):
 
 		response=""
 		if success:
-			response = "An email has been sent to {}. Please search the inbox for subject {}".format(email_address, subject)
+			response = "An email has been sent to {}.\nPlease search the inbox for subject:\n\"{}\"".format(email_address, subject)
 		else:
 			response = "Oops! Email could not be sent. Sorry for the inconvenience."
 		

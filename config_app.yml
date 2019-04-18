@@ -3,4 +3,9 @@ gmail:
   password: [PASSWORD]
 
 zomato:
-  api_key: [ZOMATO API KEY]
+  api_key: a41d5dc279267d7b3b720664090430ee
+
+slack:
+  access_token: xoxp-610890028624-610890029872-610823651061-20fd9f507273669dc8dd9bb3fdff5320
+  bot_access_token: xoxb-610890028624-599401703315-1q77laW6shFZat6av47I7f6Q
+  verification_token: gHcIYF9ZSSOmnjenhKEuDmU8

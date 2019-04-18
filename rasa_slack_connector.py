@@ -4,6 +4,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 import logging
+import re
 
 from builtins import str
 from flask import Blueprint, request, jsonify
@@ -58,6 +59,11 @@ class SlackInput(HttpInputComponent):
 				user = messaging_events.get('user')
 				text = messaging_events.get('text')
 				bot = messaging_events.get('bot_id')
+
+				is_text_email = re.match(r".*<mailto:([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)|([a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+)>", text)
+				if is_text_email:
+					text = is_text_email.group(1)
+
 				if bot == None:
 					on_new_message(UserMessage(text, SlackBot(self.slack_verification_token, channel)))
 					

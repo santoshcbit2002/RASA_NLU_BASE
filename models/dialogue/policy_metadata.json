@@ -3,9 +3,9 @@
     "action_listen": {
       "slots": [
         "budget",
+        "location",
         "cuisine",
-        "email_address",
-        "location"
+        "email_address"
       ]
     },
     "utter_goodbye": {
