@@ -4,14 +4,18 @@ from rasa_nlu.model import Trainer
 from rasa_nlu.model import Metadata, Interpreter
 from rasa_nlu import config
 from rasa_nlu.components import ComponentBuilder
-import city_scrapperpy
+import load_lookuppy
+import rasa_nlu
 
 filename = './data/locationlist.txt'
-city_scrapperpy.scrapper_func(filename)
+load_lookuppy.cities_func(filename)
+filename = './data/cuisinelist.txt'
+load_lookuppy.cuisines_func(filename)
  
 builder = ComponentBuilder(use_cache=True)
 
 def train_nlu(data, config_file, model_dir):
+	print('******* Rasa NLU Version - ',rasa_nlu.__version__,' *******')
 	training_data = load_data(data)
 	trainer = Trainer(config.load(config_file), builder)
 	trainer.train(training_data)
@@ -20,7 +24,7 @@ def train_nlu(data, config_file, model_dir):
 def run_nlu():
 	interpreter = Interpreter.load('./models/nlu/default/restaurantnlu', builder)
 	print(interpreter.parse("erode"))
-	
-if __name__ == '__main__':	
+
+if __name__ == '__main__':
 	train_nlu('./data/data.json', 'config_spacy.json', './models/nlu')
 	run_nlu()

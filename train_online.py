@@ -18,8 +18,10 @@ logger = logging.getLogger(__name__)
 def run_restaurant_online(input_channel, interpreter,
                           domain_file="restaurant_domain.yml",
                           training_data_file='data/stories.md'):
-    agent = Agent(domain_file,
-                  policies=[MemoizationPolicy(), KerasPolicy()],
+	memoization_policy = MemoizationPolicy(max_history=4)
+	keras_policy = KerasPolicy(max_history=5, epochs=500)
+    agent = Agent(domain_file, 
+                  policies=[memoization_policy, keras_policy],
                   interpreter=interpreter)
 
     agent.train_online(training_data_file,

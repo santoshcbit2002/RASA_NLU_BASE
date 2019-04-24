@@ -2,14 +2,110 @@ from __future__ import absolute_import
 from __future__ import division
 from __future__ import unicode_literals
 
-from rasa_core.actions.action import Action
-from rasa_core.events import SlotSet
+from rasa_core_sdk import Action
+from rasa_core_sdk import Tracker
+from rasa_core_sdk.events import SlotSet
+from rasa_core_sdk.executor import CollectingDispatcher
+from rasa_core_sdk.forms import FormAction
 import emailpy
 import zomato_utils
 import zomatopy
 import json
 
 zomato = zomatopy.initialize_app()
+
+class RestaurantForm(FormAction):
+
+    def name(self):
+        return "restaurant_form"
+
+    @staticmethod
+    def required_slots(tracker: Tracker) -> List[Text]:
+        return ["location", "cuisine", "budget"]
+
+    def slot_mappings(self):
+        return {
+			"location": self.from_entity(entity="location", intent="restaurant_search"),
+			"cuisine": self.from_entity(entity="cuisine", intent="restaurant_search"),
+            "budget": self.from_entity(entity="budget", intent="restaurant_search")
+		}
+
+    @staticmethod
+    def cuisine_db():
+        # type: () -> List[Text]
+        """Database of supported cuisines"""
+        return ["caribbean",
+                "chinese",
+                "french",
+                "greek",
+                "indian",
+                "italian",
+                "mexican"]
+
+    def validate_cuisine(self,
+                         value: Text,
+                         dispatcher: CollectingDispatcher,
+                         tracker: Tracker,
+                         domain: Dict[Text, Any]) -> Optional[Text]:
+        """Validate cuisine value."""
+
+        if value.lower() in self.cuisine_db():
+            # validation succeeded
+            return value
+        else:
+            dispatcher.utter_template('utter_wrong_cuisine', tracker)
+            # validation failed, set this slot to None, meaning the
+            # user will be asked for the slot again
+            return None
+
+    def validate_num_people(self,
+                            value: Text,
+                            dispatcher: CollectingDispatcher,
+                            tracker: Tracker,
+                            domain: Dict[Text, Any]) -> Optional[Text]:
+        """Validate num_people value."""
+
+        if self.is_int(value) and int(value) > 0:
+            return value
+        else:
+            dispatcher.utter_template('utter_wrong_num_people', tracker)
+            # validation failed, set slot to None
+            return None
+
+    @staticmethod
+    def validate_outdoor_seating(value: Text,
+                                 dispatcher: CollectingDispatcher,
+                                 tracker: Tracker,
+                                 domain: Dict[Text, Any]) -> Any:
+        """Validate outdoor_seating value."""
+
+        if isinstance(value, str):
+            if 'out' in value:
+                # convert "out..." to True
+                return True
+            elif 'in' in value:
+                # convert "in..." to False
+                return False
+            else:
+                dispatcher.utter_template('utter_wrong_outdoor_seating',
+                                          tracker)
+                # validation failed, set slot to None
+                return None
+
+        else:
+            # affirm/deny was picked up as T/F
+            return value
+
+    def submit(self,
+               dispatcher: CollectingDispatcher,
+               tracker: Tracker,
+               domain: Dict[Text, Any]) -> List[Dict]:
+        """Define what the form has to do
+            after all required slots are filled"""
+
+        # utter submit template
+        dispatcher.utter_template('utter_submit', tracker)
+        return []
 
 class ActionSearchRestaurants(Action):
 	def name(self):

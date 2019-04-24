@@ -1,7 +1,9 @@
-action_factory: null
-action_names:
+%YAML 1.1
+---
+actions:
 - utter_greet
 - utter_goodbye
+- utter_youarewelcome
 - utter_default
 - utter_ask_howcanhelp
 - utter_ask_location
@@ -11,18 +13,6 @@ action_names:
 - utter_ask_emailaddress
 - action_restaurant
 - action_sendemail
-actions:
-- utter_greet
-- utter_goodbye
-- utter_default
-- utter_ask_howcanhelp
-- utter_ask_location
-- utter_ask_cuisine
-- utter_ask_budget
-- utter_ask_sendmail
-- utter_ask_emailaddress
-- actions.ActionSearchRestaurants
-- actions.ActionSendEmail
 config:
   store_entities_as_slots: true
 entities:
@@ -31,16 +21,25 @@ entities:
 - budget
 - send_mail
 - email_address
+forms: []
 intents:
-- greet
-- affirm
-- deny
-- goodbye
-- thankyou
-- restaurant_search
-- send_email
+- greet:
+    use_entities: true
+- affirm:
+    use_entities: true
+- deny:
+    use_entities: true
+- goodbye:
+    use_entities: true
+- thankyou:
+    use_entities: true
+- restaurant_search:
+    use_entities: true
+- send_email:
+    use_entities: true
 slots:
   budget:
+    auto_fill: true
     initial_value: null
     type: rasa_core.slots.CategoricalSlot
     values:
@@ -48,15 +47,19 @@ slots:
     - medium
     - high
   cuisine:
+    auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
   email_address:
+    auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
   location:
+    auto_fill: true
     initial_value: null
     type: rasa_core.slots.TextSlot
   send_mail:
+    auto_fill: true
     initial_value: null
     type: rasa_core.slots.BooleanSlot
 templates:
@@ -93,16 +96,15 @@ templates:
   utter_ask_sendmail:
   - text: Do you want the search results to be e-mailed?
   utter_default:
-  - text: I am not sure how to help with that. I can only search for restaurants for
-      you
-  - text: Apologies! I did not quite get that. I can only search for restaurants for
-      you. Can you please try again
-  - text: I'm afraid i'm a little too dumb to do anything else apart from searching
-      restaurants for you
+  - text: Sorry, I didn’t understand that
+  - text: Apologies! I did not quite get that. Can you please try again
   utter_goodbye:
-  - text: goodbye :(
-  - text: Bye-bye
+  - text: goodbye 😢
+  - text: bye bye 😢
   utter_greet:
-  - text: hey there! How may i help you
+  - text: Hey there! How may I help you
   - text: Hi, How can I help you!
-  - text: Hey, How is it going. How May I help you Today
+  - text: Hey, How may I help you today?
+  utter_youarewelcome:
+  - text: You're welcome
+  - text: My pleasure

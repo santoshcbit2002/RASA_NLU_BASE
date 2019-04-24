@@ -5,7 +5,7 @@ import yaml
 #    username: YOUR EMAIL
 #    password: YOUR PASSWORD
 with open("config_app.yml", 'r') as ymlfile:
-    cfg = yaml.load(ymlfile)
+    cfg = yaml.load(ymlfile, Loader=yaml.BaseLoader)
 
 def get_config(section, key):
 	return cfg[section][key]

@@ -111,10 +111,6 @@
       },
       {
         "intent": "affirm",
-        "text": "y"
-      },
-      {
-        "intent": "affirm",
         "text": "yeah"
       },
       {
@@ -165,11 +161,6 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 31,
-            "end": 36,
-            "value": "north",
-=======
             "start": 26,
             "end": 34,
             "value": "Amravati",
@@ -185,11 +176,10 @@
             "start": 14,
             "end": 21,
             "value": "Croydon",
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
             "entity": "location"
           }
         ],
-        "text": "i'm looking for a place in the north of town"
+        "text": "restaurant in Croydon"
       },
       {
         "intent": "restaurant_search",
@@ -228,8 +218,6 @@
         "text": "restaurant in mumbai"
       },
       {
-<<<<<<< HEAD
-=======
         "intent": "restaurant_search",
         "entities": [
           {
@@ -314,7 +302,6 @@
         "text": "warasiguda Restaurants"
       },
       {
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
         "intent": "restaurant_search",
         "entities": [
           {
@@ -546,15 +533,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 3,
-            "end": 8,
-            "value": "Delhi",
-=======
             "start": 17,
             "end": 28,
             "value": "Manik Nagar",
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
             "entity": "location"
           }
         ],
@@ -564,15 +545,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 37,
-            "end": 42,
-            "value": "Delhi",
-=======
             "start": 15,
             "end": 22,
             "value": "Jubliee",
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
             "entity": "location"
           }
         ],
@@ -582,15 +557,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 37,
-            "end": 42,
-            "value": "Delhi",
-=======
             "start": 19,
             "end": 22,
             "value": "goa",
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
             "entity": "location"
           }
         ],
@@ -600,15 +569,9 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 37,
-            "end": 42,
-            "value": "delhi",
-=======
             "start": 19,
             "end": 24,
             "value": "malay",
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
             "entity": "location"
           }
         ],
@@ -738,27 +701,6 @@
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 38,
-            "end": 42,
-            "value": "pune",
-            "entity": "location"
-          }
-        ],
-        "text": "please help me to find restaurants in pune"
-      },
-      {
-        "intent": "affirm",
-        "text": "cool"
-      },
-      {
-        "intent": "greet",
-        "text": "hola"
-      },
-      {
-        "intent": "restaurant_search",
-        "text": "I’m hungry. Looking out for some good restaurants"
-=======
             "start": 3,
             "end": 9,
             "value": "palika",
@@ -766,21 +708,11 @@
           }
         ],
         "text": "in palika"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 13,
-            "end": 26,
-            "value": "less than 100",
-            "entity": "budget"
-          }
-        ],
-        "text": "my budget is less than 100 rupees"
-=======
             "start": 7,
             "end": 17,
             "value": "patharghat",
@@ -788,21 +720,11 @@
           }
         ],
         "text": "around patharghat"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 32,
-            "end": 43,
-            "value": "100 to 1000",
-            "entity": "budget"
-          }
-        ],
-        "text": "show me hotels with price range 100 to 1000"
-=======
             "start": 5,
             "end": 11,
             "value": "sudoku",
@@ -810,21 +732,11 @@
           }
         ],
         "text": "from sudoku"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 20,
-            "end": 30,
-            "value": "above 5000",
-            "entity": "budget"
-          }
-        ],
-        "text": "show me restaurants above 5000 rupees"
-=======
             "start": 3,
             "end": 10,
             "value": "wilsden",
@@ -832,65 +744,35 @@
           }
         ],
         "text": "in wilsden"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 17,
-            "end": 27,
-            "value": "below 3000",
-            "entity": "budget"
+            "start": 0,
+            "end": 7,
+            "value": "chinese",
+            "entity": "cuisine"
           }
         ],
-        "text": "recommend hotels below 3000 rupees"
-=======
-            "start": 5,
-            "end": 11,
-            "value": "Clapham",
-            "entity": "location"
-          }
-        ],
-        "text": "near Clapham"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
+        "text": "chinese restaurants"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 31,
-            "end": 44,
-            "value": "more than 200",
-            "entity": "budget"
-          }
-        ],
-        "text": "suggest restaurants with price more than 200"
-=======
             "start": 8,
             "end": 15,
             "value": "chinese",
             "entity": "cuisine"
           }
         ],
-        "text": "show me Chinese restaurants"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
+        "text": "show me chinese restaurants"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 28,
-            "end": 47,
-            "value": "between 100 and 900",
-            "entity": "budget"
-          }
-        ],
-        "text": "find restaurants with price between 100 and 900"
-=======
             "start": 13,
             "end": 18,
             "value": "chinese",
@@ -898,21 +780,11 @@
           }
         ],
         "text": "show me some china restaurants"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
-        "intent": "send_email",
+        "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 17,
-            "end": 31,
-            "value": "test@dummy.com",
-            "entity": "email_address"
-          }
-        ],
-        "text": "send an email to test@dummy.com"
-=======
             "start": 8,
             "end": 15,
             "value": "mexican",
@@ -920,21 +792,11 @@
           }
         ],
         "text": "show me Mexican restaurants"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
-        "intent": "send_email",
+        "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 8,
-            "end": 22,
-            "value": "dummy@test.com",
-            "entity": "email_address"
-          }
-        ],
-        "text": "mail to dummy@test.com"
-=======
             "start": 0,
             "end": 7,
             "value": "italian",
@@ -942,21 +804,11 @@
           }
         ],
         "text": "Italian please"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
-        "intent": "send_email",
+        "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 23,
-            "end": 36,
-            "value": "test@test.com",
-            "entity": "email_address"
-          }
-        ],
-        "text": "forward the results to test@test.com"
-=======
             "start": 0,
             "end": 8,
             "value": "american",
@@ -964,46 +816,11 @@
           }
         ],
         "text": "American restaurants"
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       },
       {
-        "intent": "send_email",
+        "intent": "restaurant_search",
         "entities": [
           {
-<<<<<<< HEAD
-            "start": 20,
-            "end": 35,
-            "value": "dummy@dummy.com",
-            "entity": "email_address"
-          }
-        ],
-        "text": "send the results to dummy@dummy.com"
-      },
-      {
-        "intent": "irrelevant_intent",
-        "text": "who is the pm of india"
-      },
-      {
-        "intent": "irrelevant_intent",
-        "text": "what is the color of the sky"
-      },
-      {
-        "intent": "irrelevant_intent",
-        "text": "a quick brown fox jumps over the lazy dog"
-      }
-    ],
-    "regex_features": [
-      {
-        "name": "email_address",
-        "pattern": "^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\\.[a-zA-Z0-9-.]+$"
-      },
-      {
-        "name": "greet",
-        "pattern": "hey[^\\s]*"
-      }
-    ],
-    "entity_synonyms": [
-=======
             "start": 13,
             "end": 21,
             "value": "american",
@@ -1037,7 +854,7 @@
             "start": 9,
             "end": 15,
             "value": "chines",
-            "entity": "chinese"
+            "entity": "cuisine"
           }
         ],
         "text": "I prefer chines"
@@ -1120,7 +937,6 @@
         ],
         "text": "South-Indian restaurants please in Banglore"
       },
->>>>>>> 95c57dfa5170da72f58a6f57a0fe8124eb8ababd
       {
         "intent": "restaurant_search",
         "entities": [
@@ -1999,19 +1815,21 @@
       },
       {
         "intent": "restaurant_search",
-        "text": "find a restaurant"
-      },
-      {
-        "intent": "restaurant_search",
         "entities": [
           {
-            "start": 18,
-            "end": 23,
-            "value": "delhi",
+            "start": 8,
+            "end": 14,
+            "value": "chinese",
+            "entity": "cuisine"
+          },
+          {
+            "start": 34,
+            "end": 39,
+            "value": "north",
             "entity": "location"
           }
         ],
-        "text": "restaurant around delhi"
+        "text": "show me chines restaurants in the north"
       },
       {
         "intent": "restaurant_search",
@@ -2220,7 +2038,7 @@
         "entities": [
           {
             "start": 3,
-            "end": 9,
+            "end": 8,
             "value": "Delhi",
             "entity": "location"
           }
@@ -2232,7 +2050,7 @@
         "entities": [
           {
             "start": 37,
-            "end": 43,
+            "end": 42,
             "value": "Delhi",
             "entity": "location"
           }
@@ -2244,7 +2062,7 @@
         "entities": [
           {
             "start": 37,
-            "end": 43,
+            "end": 42,
             "value": "Delhi",
             "entity": "location"
           }
@@ -2256,7 +2074,7 @@
         "entities": [
           {
             "start": 37,
-            "end": 43,
+            "end": 42,
             "value": "delhi",
             "entity": "location"
           }
@@ -2367,13 +2185,13 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 21,
-            "end": 25,
+            "start": 38,
+            "end": 42,
             "value": "pune",
             "entity": "location"
           }
         ],
-        "text": "find a restaurant in pune"
+        "text": "please help me to find restaurants in pune"
       },
       {
         "intent": "restaurant_search",
@@ -2404,7 +2222,7 @@
         "entities": [
           {
             "start": 9,
-            "end": 15,
+            "end": 14,
             "value": "delhi",
             "entity": "location"
           }
@@ -2499,145 +2317,129 @@
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 7,
-            "value": "trtrtrt",
-            "entity": "location"
+            "start": 13,
+            "end": 26,
+            "value": "less than 100",
+            "entity": "budget"
           }
         ],
-        "text": "trtrtrt"
+        "text": "my budget is less than 100 rupees"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 10,
-            "value": "alalalalal",
-            "entity": "location"
+            "start": 32,
+            "end": 43,
+            "value": "100 to 1000",
+            "entity": "budget"
           }
         ],
-        "text": "alalalalal"
+        "text": "show me hotels with price range 100 to 1000"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 12,
-            "value": "malemalemale",
-            "entity": "location"
+            "start": 20,
+            "end": 30,
+            "value": "above 5000",
+            "entity": "budget"
           }
         ],
-        "text": "malemalemale"
+        "text": "show me restaurants above 5000 rupees"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 7,
-            "value": "abcdefg",
-            "entity": "location"
+            "start": 17,
+            "end": 27,
+            "value": "below 3000",
+            "entity": "budget"
           }
         ],
-        "text": "abcdefg"
+        "text": "recommend hotels below 3000 rupees"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 9,
-            "value": "RENUGUNTA",
-            "entity": "location"
+            "start": 31,
+            "end": 44,
+            "value": "more than 200",
+            "entity": "budget"
           }
         ],
-        "text": "RENUGUNTA"
+        "text": "suggest restaurants with price more than 200"
       },
       {
         "intent": "restaurant_search",
         "entities": [
           {
-            "start": 0,
-            "end": 6,
-            "value": "BhALLA",
-            "entity": "location"
+            "start": 28,
+            "end": 47,
+            "value": "between 100 and 900",
+            "entity": "budget"
           }
         ],
-        "text": "BhALLA"
+        "text": "find restaurants with price between 100 and 900"
       },
       {
-        "intent": "restaurant_search",
+        "intent": "send_email",
         "entities": [
           {
-            "start": 0,
-            "end": 7,
-            "value": "Oomerul",
-            "entity": "location"
+            "start": 17,
+            "end": 31,
+            "value": "test@dummy.com",
+            "entity": "email_address"
           }
         ],
-        "text": "Oomerul"
+        "text": "send an email to test@dummy.com"
       },
       {
-        "intent": "restaurant_search",
+        "intent": "send_email",
         "entities": [
           {
-            "start": 0,
-            "end": 8,
-            "value": "badshaho",
-            "entity": "location"
+            "start": 8,
+            "end": 22,
+            "value": "dummy@test.com",
+            "entity": "email_address"
           }
         ],
-        "text": "badshaho"
+        "text": "mail to dummy@test.com"
       },
       {
-        "intent": "restaurant_search",
+        "intent": "send_email",
         "entities": [
           {
-            "start": 0,
-            "end": 6,
-            "value": "umberl",
-            "entity": "location"
+            "start": 23,
+            "end": 36,
+            "value": "test@test.com",
+            "entity": "email_address"
           }
         ],
-        "text": "umberl"
+        "text": "forward the results to test@test.com"
       },
       {
-        "intent": "restaurant_search",
+        "intent": "send_email",
         "entities": [
           {
-            "start": 0,
-            "end": 6,
-            "value": "Swampy",
-            "entity": "location"
+            "start": 20,
+            "end": 35,
+            "value": "dummy@dummy.com",
+            "entity": "email_address"
           }
         ],
-        "text": "Swampy"
+        "text": "send the results to dummy@dummy.com"
       },
       {
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 0,
-            "end": 12,
-            "value": "tetra-hedron",
-            "entity": "location"
-          }
-        ],
-        "text": "tetra-hedron"
+        "intent": "irrelevant_intent",
+        "text": "who is the pm of india"
       },
       {
-        "intent": "restaurant_search",
-        "entities": [
-          {
-            "start": 0,
-            "end": 7,
-            "value": "mallesh",
-            "entity": "location"
-          }
-        ],
-        "text": "mallesh"
+        "intent": "irrelevant_intent",
+        "text": "what is the color of the sky"
       },
       {
         "intent": "restaurant_search",
@@ -3777,60 +3579,6 @@
         "value": "visakhapatnam",
         "synonyms": [
           "vizag"
-        ]
-      },
-      {
-        "value": "vegetarian",
-        "synonyms": [
-          "veggie",
-          "vegg"
-        ]
-      },
-      {
-        "value": "low",
-        "synonyms": [
-          "Lesser than Rs. 300",
-          "Lesser than 300",
-          "Less than Rs. 300",
-          "Less than 300",
-          "lesser than Rs. 300",
-          "lesser than 300",
-          "less than Rs. 300",
-          "less than 300",
-          "upto Rs. 300",
-          "upto 300",
-          "maximum Rs. 300",
-          "maximum 300",
-          "max Rs. 300",
-          "max 300",
-          "below 300"
-        ]
-      },
-      {
-        "value": "medium",
-        "synonyms": [
-          "300 to 700",
-          "between 300 and 700"
-        ]
-      },
-      {
-        "value": "high",
-        "synonyms": [
-          "More than Rs. 700",
-          "More than 700",
-          "Greater than Rs. 700",
-          "Greater than 700",
-          "more than Rs. 700",
-          "more than 700",
-          "greater than Rs. 700",
-          "greater than 700",
-          "Rs. 700 onwards",
-          "700 onwards",
-          "minimum Rs. 700",
-          "minimum 700",
-          "min Rs. 700",
-          "min 700",
-          "above 700"
         ]
       }
     ]
