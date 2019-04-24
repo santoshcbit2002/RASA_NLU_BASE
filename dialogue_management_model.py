@@ -10,11 +10,18 @@ from rasa_core.channels.console import ConsoleInputChannel
 from rasa_core.interpreter import RegexInterpreter
 from rasa_core.policies.keras_policy import KerasPolicy
 from rasa_core.policies.memoization import MemoizationPolicy
+# --
 from rasa_core.interpreter import RasaNLUInterpreter
+#from rasa.nlu.model import Metadata, Interpreter
+#from rasa.nlu.components import ComponentBuilder
+#--
 from rasa_core.featurizers import (MaxHistoryTrackerFeaturizer, BinarySingleStateFeaturizer)
 
 logger = logging.getLogger(__name__)
 
+# --
+#builder = ComponentBuilder(use_cache=True)
+# --
 def train_dialogue(domain_file = 'restaurant_domain.yml',
 					model_path = './models/dialogue',
 					training_data_file = './data/stories.md'):
