@@ -11,11 +11,9 @@ start-nlu-app:
 train-core:
 	python train_init.py
 
-run-simple-server:
-	python -m rasa_core.run --enable_api -d models/current/dialogue -u models/current/nlu -o out.log --endpoints endpoints.yml
-
-cmdline:
-	python -m rasa_core.run -d models/current/dialogue -u models/current/nlu --endpoints endpoints.yml
-	
 action-server:
 	python -m rasa_core_sdk.endpoint --actions actions
+
+train-online:
+	make action-server&
+	python -m rasa_core.train interactive -o models/dialogue -d restaurant_domain.yml -c policies.yml -s data/stories.md --nlu models/nlu/default/restaurantnlu --endpoints endpoints.yml

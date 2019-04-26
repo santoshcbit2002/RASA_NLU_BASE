@@ -19,7 +19,7 @@
     - slot{"email_address": "test@test.com"}
     - action_sendemail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 8338365539360157387
 * greet
@@ -38,7 +38,7 @@
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -2534878008547032613
 * greet
@@ -55,7 +55,7 @@
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 9181093531135741497
 * greet
@@ -74,7 +74,7 @@
     - slot{"email_address": "test@test.com"}
     - action_sendemail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 5413899784828054561
 * greet
@@ -93,7 +93,7 @@
     - slot{"email_address": "test@test.com"}
     - action_sendemail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 3165029154623282951
 * greet
@@ -112,7 +112,7 @@
     - slot{"email_address": "test@test.com"}
     - action_sendemail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 1897357731294869691
 * greet
@@ -129,7 +129,7 @@
     - slot{"email_address": "123@gmail.com"}
     - action_sendemail
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -1545073211637819362
 * greet
@@ -144,7 +144,7 @@
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story 5175655746450323053
 * restaurant_search{"location": "bangalore", "cuisine": "north indian", "budget": "low"}
@@ -155,12 +155,12 @@
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -5093960693092854837
 * goodbye
     - utter_goodbye
-    - export
+    - action_restart
 
 ## Generated Story -5093960693092854837
 * irrelevant_intent

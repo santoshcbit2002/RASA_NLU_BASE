@@ -7,6 +7,7 @@ import logging
 
 from rasa_core.agent import Agent
 from rasa_core.channels.console import ConsoleInputChannel
+from rasa_core.featurizers import (MaxHistoryTrackerFeaturizer, BinarySingleStateFeaturizer)
 from rasa_core.interpreter import RegexInterpreter
 from rasa_core.policies.keras_policy import KerasPolicy
 from rasa_core.policies.memoization import MemoizationPolicy
@@ -18,8 +19,9 @@ logger = logging.getLogger(__name__)
 def run_restaurant_online(input_channel, interpreter,
                           domain_file="restaurant_domain.yml",
                           training_data_file='data/stories.md'):
-	memoization_policy = MemoizationPolicy(max_history=4)
-	keras_policy = KerasPolicy(max_history=5, epochs=500)
+    memoization_policy = MemoizationPolicy(max_history=4)
+    featurizer = MaxHistoryTrackerFeaturizer(BinarySingleStateFeaturizer(), max_history=5)
+    keras_policy = KerasPolicy(featurizer=featurizer, epochs=500)
     agent = Agent(domain_file, 
                   policies=[memoization_policy, keras_policy],
                   interpreter=interpreter)

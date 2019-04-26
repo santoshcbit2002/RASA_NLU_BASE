@@ -1,40 +1,22 @@
 slots:
   location:
-    type: unfeaturized
-    auto_fill: false
+    type: text
   lat:
     type: float
     min_value: 8.4
     max_value: 37.6
-    auto_fill: false
   lon:
     type: float
     min_value: 68.7
     max_value: 97.25
-    auto_fill: false
   cuisine:
-    type: categorical
-    values:
-      - chinese
-      - mexican
-      - italian
-      - american
-      - south_indian
-      - north_indian
-    auto_fill: false
+    type: text
   budget:
-    type: categorical
-    values:
-      - low
-      - medium
-      - high
-    auto_fill: false
+    type: text
   send_mail:
     type: bool
-    auto_fill: false
   email_address:
     type: text
-    auto_fill: false
 
 entities:
   - location
@@ -68,6 +50,8 @@ templates:
     - "Apologies! I did not quite get that. Can you please try again"
   utter_ask_location:
     - "In which location?"
+  utter_wrong_location:
+    - "We do not operate in that area yet"
   utter_ask_cuisine: 
     - text: "What kind of cuisine would you prefer?"
       buttons:
@@ -83,6 +67,21 @@ templates:
         payload: "south_indian"
       - title: "North Indian"
         payload: "north_indian"
+  utter_wrong_cuisine:
+    - text: "I'm afraid I do not understand your cuisine preference. Please try again from the below options"
+      buttons:
+      - title: "Chinese"
+        payload: "chinese"
+      - title: "Mexican"
+        payload: "mexican"
+      - title: "Italian"
+        payload: "italian"
+      - title: "American"
+        payload: "american"
+      - title: "South Indian"
+        payload: "south indian"
+      - title: "North Indian"
+        payload: "north indian"
   utter_ask_budget: 
     - text: "What price range are you looking at?"
       buttons:
@@ -90,7 +89,16 @@ templates:
         payload: "low"
       - title: "Rs. 300 to 700"
         payload: "medium"
-      - title: "More than 700"
+      - title: "More than Rs. 700"
+        payload: "high"
+  utter_wrong_budget: 
+    - text: "Oops! Did not quite get the budget info. Can you please try again from the below options"
+      buttons:
+      - title: "Lesser than Rs. 300"
+        payload: "low"
+      - title: "Rs. 300 to 700"
+        payload: "medium"
+      - title: "More than Rs. 700"
         payload: "high"
   utter_ask_howcanhelp:
     - "how can I help you?"
@@ -112,7 +120,3 @@ actions:
   - utter_ask_emailaddress
   - action_restaurant
   - action_sendemail
-
-forms:
-  - restaurant_form
-  - email_form
