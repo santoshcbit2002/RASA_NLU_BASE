@@ -14,6 +14,13 @@ train-core:
 action-server:
 	python -m rasa_core_sdk.endpoint --actions actions
 
+run-core:
+	python -m rasa_core.run --nlu models/nlu/default/restaurantnlu --core models/dialogue --endpoints endpoints.yml
+
 train-online:
 	make action-server&
 	python -m rasa_core.train interactive -o models/dialogue -d restaurant_domain.yml -c policies.yml -s data/stories.md --nlu models/nlu/default/restaurantnlu --endpoints endpoints.yml
+
+run:
+	make action-server&
+	make run-core
