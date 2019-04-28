@@ -17,8 +17,6 @@ slots:
     type: text
   budget_type:
     type: text
-  search_success:
-    type: bool
   email_address:
     type: text
 
@@ -84,19 +82,6 @@ templates:
         payload: "north_indian"
   utter_wrong_cuisine:
     - text: "I'm afraid I do not understand your cuisine preference. Please try again from the below options"
-      buttons:
-      - title: "Chinese"
-        payload: "chinese"
-      - title: "Mexican"
-        payload: "mexican"
-      - title: "Italian"
-        payload: "italian"
-      - title: "American"
-        payload: "american"
-      - title: "South Indian"
-        payload: "south indian"
-      - title: "North Indian"
-        payload: "north indian"
   utter_ask_budget: 
     - text: "What price range are you looking at?"
       buttons:
@@ -107,14 +92,7 @@ templates:
       - title: "More than Rs. 700"
         payload: "high"
   utter_wrong_budget: 
-    - text: "Oops! Did not quite get the budget info. Can you please try again from the below options"
-      buttons:
-      - title: "Lesser than Rs. 300"
-        payload: "low"
-      - title: "Rs. 300 to 700"
-        payload: "medium"
-      - title: "More than Rs. 700"
-        payload: "high"
+    - text: "Oops! Did not quite get the budget info."
   utter_ask_howcanhelp:
     - "how can I help you?"
   utter_ask_sendmail:
@@ -133,8 +111,7 @@ actions:
   - utter_ask_budget
   - utter_ask_sendmail
   - utter_ask_emailaddress
-  - action_restaurant
   - action_sendemail
-  - validate_location
-  - validate_cuisine
-  - validate_budget
+
+forms:
+  - restaurant_form

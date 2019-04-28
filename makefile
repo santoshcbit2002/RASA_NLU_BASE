@@ -1,5 +1,5 @@
 .PHONY: clean setupbot checkbot startbot runbot
-
+SHELL=/bin/bash
 TEST_PATH=./
 
 setupbot:
@@ -27,6 +27,7 @@ startbot:
 	python3 -m rasa_core_sdk.endpoint --actions actions&
     
 runbot:	
+	make startbot
 	python3 -m rasa_core.run --nlu models/nlu/default/restaurantnlu --core models/dialogue --endpoints endpoints.yml
 
 trainbot:
