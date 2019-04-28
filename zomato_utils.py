@@ -113,7 +113,7 @@ servicable_cuisines = {
 
 valid_budgets = {
   'low': r"(less|below|under|max|<|upto)\D*([0-9]+)",
-  'medium': r"([0-9]+)\D*[to|\-|and]\D*([0-9]+)",
+  'medium': r"\D*([0-9]+)\D*[to|\-|and]\D*([0-9]+)",
   'high': r"(more|great|above|min|>)\D*([0-9]+)|([0-9]+)\D*onwards"
 }
 
@@ -189,13 +189,13 @@ def get_top_restaurants_by_user_ratings(lat, lon, cuisine, budget, top_n=5):
     } for restaurant in top_sorted]
 
 if __name__ == '__main__':
-  # location = get_valid_location('hubli')
-  # print(location)
-  # cuisine = get_valid_cuisine('chinese')
-  # print(cuisine)
+  location = get_valid_location('pune')
+  print(location)
+  cuisine = get_valid_cuisine('chinese')
+  print(cuisine)
   budget = get_valid_budget('> 700')
   print(budget)
-  # search_results = get_top_restaurants_by_user_ratings(location['latitude'], location['longitude'], cuisine['cuisine_id'], budget['type'], top_n=10)
-  # for result in search_results:
-  #   print(result)
+  search_results = get_top_restaurants_by_user_ratings(location['latitude'], location['longitude'], cuisine['cuisine_id'], budget['type'], top_n=10)
+  for result in search_results:
+    print(result)
 

@@ -24,10 +24,11 @@ checkbot:
 startbot:
 	python3 nlu_model.py
 	python3 train_init.py
-	python3 -m rasa_core_sdk.endpoint --actions actions
+	python3 -m rasa_core_sdk.endpoint --actions actions&
     
 runbot:	
 	python3 -m rasa_core.run --nlu models/nlu/default/restaurantnlu --core models/dialogue --endpoints endpoints.yml
 
 trainbot:
+	make startbot
 	python3 -m rasa_core.train interactive -o models/dialogue -d restaurant_domain.yml -c policies.yml -s data/stories.md --nlu models/nlu/default/restaurantnlu --endpoints endpoints.yml

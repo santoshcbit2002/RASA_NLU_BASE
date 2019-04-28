@@ -145,8 +145,7 @@ class ActionSearchRestaurants(Action):
 
         location_name = tracker.get_slot('location')
         lat = tracker.get_slot('lat')
-        print('lat-> ', lat)
-        lon = tracker.get_slot('lat')
+        lon = tracker.get_slot('lon')
         cuisine = tracker.get_slot('cuisine')
         cuisine_id = tracker.get_slot('cuisine_id')
         budget = tracker.get_slot('budget_type')
