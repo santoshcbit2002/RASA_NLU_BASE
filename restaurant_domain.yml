@@ -39,19 +39,30 @@ templates:
     - "Hey there! How may I help you"
     - "Hi, How can I help you!"
     - "Hey, How may I help you today?"
+    - "Hello, what can I search for you?"
+    - "Hello there, feeling hungry, what can I search for you?"
   utter_goodbye:
-    - "goodbye 😢"
-    - "bye bye 😢"
+    - "Good bye"
+    - "Bye bye"
+    - "Glad I could help!"
+    - "See you soon"
   utter_youarewelcome:
     - "You're welcome"
     - "My pleasure"
+    - "Glad I can help"
   utter_default:
     - "Sorry, I didn’t understand that"
     - "Apologies! I did not quite get that. Can you please try again"
+    - "Can you try again, please? "
+    - "What? Didn't catch that? I am still learning.Can you come again?"
   utter_ask_location:
     - "In which location?"
+    - "Which location you like?"
+    - "Around which location?"
+    - "Any where near?"
   utter_wrong_location:
     - "We do not operate in that area yet"
+    - "Hmm we don't operate there."
   utter_ask_cuisine: 
     - text: "What kind of cuisine would you prefer?"
       buttons:

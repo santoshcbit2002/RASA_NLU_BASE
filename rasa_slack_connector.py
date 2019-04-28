@@ -9,8 +9,12 @@ import re
 from builtins import str
 from flask import Blueprint, request, jsonify
 
-from rasa_core.channels.channel import UserMessage, OutputChannel
-from rasa_core.channels.rest import HttpInputComponent
+#from rasa_core.channels.channel import UserMessage, OutputChannel
+#from rasa_core.channels.rest import HttpInputComponent
+from rasa_core.channels.slack import SlackInput
+from rasa_core.agent import Agent
+from rasa_core.interpreter import RegexInterpreter
+from rasa_core.interpreter import RasaNLUInterpreter
 
 logger = logging.getLogger(__name__)
 

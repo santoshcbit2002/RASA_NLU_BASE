@@ -23,7 +23,7 @@ def train_nlu(data, config_file, model_dir):
 	
 def run_nlu():
 	interpreter = Interpreter.load('./models/nlu/default/restaurantnlu', builder)
-	print(interpreter.parse("erode"))
+	print(interpreter.parse("south indian restaurants in agra costs less than 500"))
 
 if __name__ == '__main__':
 	train_nlu('./data/data.json', 'config_spacy.json', './models/nlu')

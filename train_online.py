@@ -6,7 +6,7 @@ from __future__ import unicode_literals
 import logging
 
 from rasa_core.agent import Agent
-from rasa_core.channels.console import ConsoleInputChannel
+#from rasa_core.channels.console import ConsoleInputChannel
 from rasa_core.featurizers import (MaxHistoryTrackerFeaturizer, BinarySingleStateFeaturizer)
 from rasa_core.interpreter import RegexInterpreter
 from rasa_core.policies.keras_policy import KerasPolicy
