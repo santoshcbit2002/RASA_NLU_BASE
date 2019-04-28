@@ -7,11 +7,12 @@
 
 {% for restaurant in restaurants %}
 	<p>
-		<a href={{restaurant.url}}><strong>{{restaurant.name}}</strong></a><br>
+		<h3><a href={{restaurant.url}}>{{restaurant.name}}</a></h3><br>
+		<img height = "325", width = "450", src={{restaurant.image}}><br>
 		{{restaurant.address}}<br>
 		Average cost for two: INR {{restaurant.average_cost_for_two}}<br>
 		Zomato user rating: {{restaurant.user_rating}}<br>
-	</p>
+	</p><br>
 {% endfor %}
 
 <p>

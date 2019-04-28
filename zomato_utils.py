@@ -185,7 +185,8 @@ def get_top_restaurants_by_user_ratings(lat, lon, cuisine, budget, top_n=5):
       'address':restaurant['location']['address'], \
       'average_cost_for_two':restaurant['average_cost_for_two'], \
       'user_rating':restaurant['user_rating']['aggregate_rating'], \
-      'url':restaurant['url'] \
+      'url':restaurant['url'], \
+      'image':restaurant['featured_image'] \
     } for restaurant in top_sorted]
 
 if __name__ == '__main__':

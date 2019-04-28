@@ -33,9 +33,14 @@ def send_mail(email_address, subject, location, cuisine, budget, restaurants):
 			return False
 
 if __name__ == '__main__':
-	import zomato_utils
-	location = zomato_utils.get_valid_location('bengaluru')
-	top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location, 'chinese', 'high', top_n=10)
-	print(top_10_restaurants)
-	success = send_mail('keensam04@gmail.com', 'test', 'bengaluru', 'chinese', 'high', top_10_restaurants)
-	print(success)
+    import zomato_utils
+    location = zomato_utils.get_valid_location('pune')
+    print(location)
+    cuisine = zomato_utils.get_valid_cuisine('chinese')
+    print(cuisine)
+    budget = zomato_utils.get_valid_budget('> 700')
+    print(budget)
+    top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(location['latitude'], location['longitude'], cuisine['cuisine_id'], budget['type'], top_n=10)
+    print(top_10_restaurants)
+    success = send_mail('keensam04@gmail.com', 'test', 'bengaluru', 'chinese', '> 700', top_10_restaurants)
+    print(success)
