@@ -19,8 +19,6 @@ slots:
     type: text
   search_success:
     type: bool
-  send_mail:
-    type: bool
   email_address:
     type: text
 

@@ -203,3 +203,71 @@
 * irrelevant_intent
     - utter_default
     - action_restart
+
+## Generated Story -1334471368469366082
+* restaurant_search{"location": "pune", "budget": "300 and 700", "cuisine": "chinese"}
+    - slot{"budget": "300 and 700"}
+    - slot{"cuisine": "chinese"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
+    - validate_budget
+    - slot{"budget_type": "medium"}
+    - action_restaurant
+    - slot{"search_success": true}
+    - utter_ask_sendmail
+* affirm
+    - utter_ask_emailaddress
+* send_email{"email_address": "keensam04@gmail.com"}
+    - slot{"email_address": "keensam04@gmail.com"}
+    - action_sendemail
+    - utter_goodbye
+    - action_restart
+
+## Generated Story 2985217332536948937
+* restaurant_search{"location": "hubli"}
+    - slot{"location": "hubli"}
+    - validate_location
+    - utter_ask_location
+* restaurant_search{"location": "hubli"}
+    - slot{"location": "hubli"}
+    - validate_location
+    - utter_ask_location
+* restaurant_search{"location": "hubli"}
+    - slot{"location": "hubli"}
+    - validate_location
+    - action_default_fallback
+    - action_restart
+
+## Generated Story 2985217332536948937
+* restaurant_search{"cuisine": "japanese"}
+    - slot{"cuisine": "japanese"}
+    - validate_cuisine
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "japanese"}
+    - slot{"cuisine": "japanese"}
+    - validate_cuisine
+    - utter_ask_cuisine
+* restaurant_search{"cuisine": "japanese"}
+    - slot{"cuisine": "japanese"}
+    - validate_cuisine
+    - action_default_fallback
+    - action_restart
+
+## Generated Story 2985217332536948937
+* restaurant_search{"budget": "invalid"}
+    - slot{"budget": "invalid"}
+    - validate_budget
+    - utter_ask_budget
+* restaurant_search{"budget": "invalid"}
+    - slot{"budget": "invalid"}
+    - validate_budget
+    - utter_ask_budget
+* restaurant_search{"budget": "invalid"}
+    - slot{"budget": "invalid"}
+    - validate_budget
+    - action_default_fallback
+    - action_restart
