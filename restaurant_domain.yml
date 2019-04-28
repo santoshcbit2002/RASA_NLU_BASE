@@ -11,8 +11,14 @@ slots:
     max_value: 97.25
   cuisine:
     type: text
+  cuisine_id:
+    type: text
   budget:
     type: text
+  budget_type:
+    type: text
+  search_success:
+    type: bool
   send_mail:
     type: bool
   email_address:
@@ -131,3 +137,6 @@ actions:
   - utter_ask_emailaddress
   - action_restaurant
   - action_sendemail
+  - validate_location
+  - validate_cuisine
+  - validate_budget

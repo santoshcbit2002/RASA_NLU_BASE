@@ -1,57 +1,54 @@
-## Generated Story -1631451963452281525
+## Generated Story 6597629880874768062
 * greet
     - utter_greet
 * restaurant_search
     - utter_ask_location
 * restaurant_search{"location": "pune"}
     - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
     - utter_ask_budget
-* restaurant_search{"budget": "high"}
-    - slot{"budget": "high"}
+* restaurant_search{"budget": "> 700"}
+    - slot{"budget": "> 700"}
+    - validate_budget
+    - slot{"budget_type": "high"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
 * affirm
     - utter_ask_emailaddress
-* send_email{"email_address": "test@test.com"}
-    - slot{"email_address": "test@test.com"}
+* send_email{"email_address": "keensam04@gmail.com"}
+    - slot{"email_address": "keensam04@gmail.com"}
     - action_sendemail
     - utter_goodbye
     - action_restart
 
-## Generated Story 8338365539360157387
+## Generated Story 752311032071232323
 * greet
     - utter_greet
-* restaurant_search
-    - utter_ask_location
-* restaurant_search{"location": "bengaluru"}
-    - slot{"location": "bengaluru"}
-    - utter_ask_cuisine
-* restaurant_search{"cuisine": "chinese"}
-    - slot{"cuisine": "chinese"}
-    - utter_ask_budget
-* restaurant_search{"budget": "high"}
-    - slot{"budget": "high"}
-    - action_restaurant
-    - utter_ask_sendmail
-* goodbye
-    - utter_goodbye
-    - action_restart
-
-## Generated Story -2534878008547032613
-* greet
-    - utter_greet
-* restaurant_search{"location": "delhi"}
-    - slot{"location": "delhi"}
+* restaurant_search{"location": "banglore"}
+    - slot{"location": "banglore"}
+    - validate_location
+    - slot{"lat": 18.548498}
+    - slot{"lon": 73.773357}
     - utter_ask_cuisine
 * restaurant_search{"cuisine": "italian"}
     - slot{"cuisine": "italian"}
+    - validate_cuisine
+    - slot{"cuisine_id": "55"}
     - utter_ask_budget
-* restaurant_search{"budget": "low"}
-    - slot{"budget": "low"}
+* restaurant_search{"budget": "< 300"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
@@ -62,71 +59,95 @@
     - utter_greet
 * restaurant_search{"cuisine": "chinese"}
     - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
     - utter_ask_location
-* restaurant_search{"location": "mumbai"}
-    - slot{"location": "mumbai"}
+* restaurant_search{"location": "pune"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
     - utter_ask_budget
-* restaurant_search{"budget": "low"}
-    - slot{"budget": "low"}
+* restaurant_search{"budget": "< 300"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
-* send_email{"email_address": "test@test.com"}
-    - slot{"email_address": "test@test.com"}
-    - action_sendemail
+* goodbye
     - utter_goodbye
     - action_restart
 
 ## Generated Story 5413899784828054561
 * greet
     - utter_greet
-* restaurant_search{"budget": "low"}
-    - slot{"budget": "low"}
+* restaurant_search{"budget": "< 300"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - utter_ask_location
-* restaurant_search{"location": "bengaluru"}
-    - slot{"location": "bengaluru"}
+* restaurant_search{"location": "pune"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
     - utter_ask_cuisine
-* restaurant_search{"cuisine": "south indian"}
-    - slot{"cuisine": "south indian"}
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
-* send_email{"email_address": "test@test.com"}
-    - slot{"email_address": "test@test.com"}
-    - action_sendemail
+* goodbye
     - utter_goodbye
     - action_restart
 
 ## Generated Story 3165029154623282951
 * greet
     - utter_greet
-* restaurant_search{"location": "bangalore", "cuisine": "mexican"}
-    - slot{"cuisine": "mexican"}
-    - slot{"location": "bangalore"}
+* restaurant_search{"location": "pune", "cuisine": "chinese"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
+    - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
     - utter_ask_budget
-* restaurant_search{"budget": "low"}
-    - slot{"budget": "low"}
+* restaurant_search{"budget": "< 300"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
-* 
-    - utter_default
-* send_email{"email_address": "test@test.com"}
-    - slot{"email_address": "test@test.com"}
-    - action_sendemail
+* goodbye
     - utter_goodbye
     - action_restart
 
 ## Generated Story 1897357731294869691
 * greet
     - utter_greet
-* restaurant_search{"location": "bengaluru", "budget": "low"}
-    - slot{"location": "bengaluru"}
-    - slot{"budget": "low"}
+* restaurant_search{"location": "pune", "budget": "< 300"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - utter_ask_cuisine
-* restaurant_search{"cuisine": "american"}
-    - slot{"cuisine": "american"}
+* restaurant_search{"cuisine": "chinese"}
+    - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
-* send_email{"email_address": "123@gmail.com"}
-    - slot{"email_address": "123@gmail.com"}
+* send_email{"email_address": "keensam04@gmail.com"}
+    - slot{"email_address": "keensam04@gmail.com"}
     - action_sendemail
     - utter_goodbye
     - action_restart
@@ -134,24 +155,40 @@
 ## Generated Story -1545073211637819362
 * greet
     - utter_greet
-* restaurant_search{"cuisine": "indian", "budget": "low"}
-    - slot{"budget": "low"}
-    - slot{"cuisine": "indian"}
+* restaurant_search{"cuisine": "chinese", "budget": "< 300"}
+    - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - utter_ask_location
 * restaurant_search{"location": "pune"}
     - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
     - action_restart
 
 ## Generated Story 5175655746450323053
-* restaurant_search{"location": "bangalore", "cuisine": "north indian", "budget": "low"}
-    - slot{"budget": "low"}
-    - slot{"cuisine": "north indian"}
-    - slot{"location": "bangalore"}
+* restaurant_search{"location": "pune", "cuisine": "chinese", "budget": "< 300"}
+    - slot{"location": "pune"}
+    - validate_location
+    - slot{"lat": 18.520469}
+    - slot{"lon": 73.85662}
+    - slot{"cuisine": "chinese"}
+    - validate_cuisine
+    - slot{"cuisine_id": "25"}
+    - slot{"budget": "< 300"}
+    - validate_budget
+    - slot{"budget_type": "low"}
     - action_restaurant
+    - slot{"search_success": true}
     - utter_ask_sendmail
 * goodbye
     - utter_goodbye
@@ -165,4 +202,4 @@
 ## Generated Story -5093960693092854837
 * irrelevant_intent
     - utter_default
-    - export
+    - action_restart

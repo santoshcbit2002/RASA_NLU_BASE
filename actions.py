@@ -96,6 +96,47 @@ class RestaurantForm(FormAction):
         dispatcher.utter_message(response)
         return []
 
+class ActionValidateLocation(Action):
+    def name(self):
+        return 'validate_location'
+        
+    def run(self, dispatcher, tracker, domain):
+
+        location_name = tracker.get_slot('location')
+        location = zomato_utils.get_valid_location(location_name)
+
+        if location['is_valid']:
+            return[SlotSet("lat", location["latitude"]), SlotSet("lon", location["longitude"])]
+        else:
+            dispatcher.utter_template('utter_wrong_location', tracker)
+            return []
+
+class ActionValidateCuisine(Action):
+    def name(self):
+        return 'validate_cuisine'
+        
+    def run(self, dispatcher, tracker, domain):
+        _cuisine = tracker.get_slot('cuisine')
+        cuisine = zomato_utils.get_valid_cuisine(_cuisine)
+        if cuisine['is_valid']:
+            return[SlotSet("cuisine_id", cuisine["cuisine_id"])]
+        else:
+            dispatcher.utter_template('utter_wrong_cuisine', tracker)
+            return []
+
+class ActionValidateBudget(Action):
+    def name(self):
+        return 'validate_budget'
+        
+    def run(self, dispatcher, tracker, domain):
+        _budget = tracker.get_slot('budget')
+        budget = zomato_utils.get_valid_budget(_budget)
+        if budget['is_valid']:
+            return[SlotSet("budget_type", budget["type"])]
+        else:
+            dispatcher.utter_template('utter_wrong_budget', tracker)
+            return []
+
 class ActionSearchRestaurants(Action):
     def name(self):
         return 'action_restaurant'
@@ -103,31 +144,28 @@ class ActionSearchRestaurants(Action):
     def run(self, dispatcher, tracker, domain):
 
         location_name = tracker.get_slot('location')
+        lat = tracker.get_slot('lat')
+        print('lat-> ', lat)
+        lon = tracker.get_slot('lat')
         cuisine = tracker.get_slot('cuisine')
-        budget = tracker.get_slot('budget')
+        cuisine_id = tracker.get_slot('cuisine_id')
+        budget = tracker.get_slot('budget_type')
 
-        location = zomato_utils.get_valid_location(location_name)
-        lat = location['latitude']
-        lon = location['longitude']
+        top_5_restaurants = []
+        if lat is not None and lon is not None and cuisine_id is not None and budget is not None:
+            top_5_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(lat, lon, cuisine_id, budget)
+        response = "No restaurants found in {} serving {} cuisine in {} budget".format(location_name, cuisine, budget)
+        is_search_successful = False
+        if len(top_5_restaurants) > 0:
+            index = 1
+            response = "Following are top 5 restaurants matching your preference in order of average user rating on zomato:\n\n"
+            for restaurant in top_5_restaurants:
+                response = response + "{}. {} in {} has been rated {}\n".format(index, restaurant['name'], restaurant['address'], restaurant['user_rating'])
+                index += 1
+            is_search_successful = True
 
-        _budget = zomato_utils.get_valid_budget(budget)
-
-        response = ""
-        if location['is_valid'] and _budget['is_valid']:
-            top_5_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(lat, lon, cuisine, _budget['type'])
-            if len(top_5_restaurants) == 0:
-                response = "No restaurants found in {} serving {} cuisine in {} budget".format(location_name, cuisine, budget)
-            else:
-                index = 1
-                response = "Following are top 5 restaurants matching your preference in order of average user rating on zomato:\n\n"
-                for restaurant in top_5_restaurants:
-                    response = response + "{}. {} in {} has been rated {}\n".format(index, restaurant['name'], restaurant['address'], restaurant['user_rating'])
-                    index += 1
-        else:
-            response = "We do not operate in that area yet"
-        
         dispatcher.utter_message(response)
-        return[SlotSet("lat", lat), SlotSet("lon", lon), SlotSet("budget", _budget['type'])]
+        return[SlotSet("search_success", is_search_successful)]
 
 class ActionSendEmail(Action):
     def name(self):
@@ -136,11 +174,13 @@ class ActionSendEmail(Action):
     def run(self, dispatcher, tracker, domain):
         location_name = tracker.get_slot('location')
         lat = tracker.get_slot('lat')
-        lon = tracker.get_slot('lon')
+        lon = tracker.get_slot('lat')
         cuisine = tracker.get_slot('cuisine')
+        cuisine_id = tracker.get_slot('cuisine_id')
         budget = tracker.get_slot('budget')
+        budget_type = tracker.get_slot('budget_type')
 
-        top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(lat, lon, cuisine, budget, top_n=10)
+        top_10_restaurants = zomato_utils.get_top_restaurants_by_user_ratings(lat, lon, cuisine_id, budget_type, top_n=10)
 
         email_address = tracker.get_slot('email_address')
         subject = "[FOODIE] Restaurant search results for {} budget restaurants serving {} cuisine in {}".format(budget, cuisine, location_name)
