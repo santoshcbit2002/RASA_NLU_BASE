@@ -1,18 +1,16 @@
 .PHONY: clean setupbot checkbot startbot runbot
-SHELL=/bin/bash
-TEST_PATH=./
 
 setupbot:
-	sudo pip uninstall --yes rasa_nlu 
-	sudo pip uninstall --yes rasa_core 
+	pip uninstall --yes rasa_nlu 
+	pip uninstall --yes rasa_core 
 	pip install rasa_nlu --user
 	pip install rasa_nlu[spacy] --user
 	python3 -m spacy download en_core_web_md --force
 	python3 -m spacy link en_core_web_md en --force
 	pip install rasa_core --user
-	sudo pip uninstall --yes rasa_core_sdk 
-	sudo pip install rasa_core_sdk --user
-	pip install beautifulsoup4
+	pip uninstall --yes rasa_core_sdk 
+	pip install rasa_core_sdk --user
+	pip install beautifulsoup4	
 	pip install pandas
 	pip install Flask-Mail
 	
@@ -24,12 +22,11 @@ checkbot:
 startbot:
 	python3 nlu_model.py
 	python3 train_init.py
-	python3 -m rasa_core_sdk.endpoint --actions actions&
-    
-runbot:	
-	make startbot
+	python3 -m rasa_core_sdk.endpoint --actions actions
+
+runbot:
 	python3 -m rasa_core.run --nlu models/nlu/default/restaurantnlu --core models/dialogue --endpoints endpoints.yml
 
 trainbot:
-	make startbot
 	python3 -m rasa_core.train interactive -o models/dialogue -d restaurant_domain.yml -c policies.yml -s data/stories.md --nlu models/nlu/default/restaurantnlu --endpoints endpoints.yml
+	

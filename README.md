@@ -1,57 +1,39 @@
-# RASA_NLU_BASE
-## Setup
-```
-cd [PATH TO]/RASA_NLU_BASE/
-virtualenv rasa
-source rasa/bin/activate
+Introduction:
+=============
+FoodieBot - a restaurant search bot engages conversation with users. Based on the location, cuisinie and specific budget slots that user chooses, the bot presents Top 5 results on the chat window. If user wishes, Top 10 results will be emailed to the user.
 
+A detailed demonstration of Bot working on Slack can be found on youtube at: 
 
-# If there are previous rasa installations , uninstall them
-pip uninstall rasa_nlu --user
-pip uninstall rasa_core --user
-pip uninstall rasa_core_sdk --user
+The chat bot is built on RASA NLU and CORE architecture, running on Python 3.6.0 version. The setup instructions are below. 
 
-# install latest version of rasa nlu
-pip install rasa_nlu --user
-pip install rasa_nlu[spacy] --user
-python3 -c "import rasa_nlu; print(rasa_nlu.__version__)"
-python3 -m spacy download en_core_web_md
-python3 -m spacy link en_core_web_md en
+Detailed Setup Instructions:
+============================
+1. Download the RASA_BASE zip file submitted on the portal and Unzip the  RASA_BASE zip file.
+2. Open terminal and navigate into the folder of RASA_BASE
+3. Execute the command on the terminal -   "conda create -n rasa -y python=3.6"
+        This command creates a virtual environment called ‘rasa’ with python 3.6. Execution time - 1 - 1.5 mins.    [*** See the Special-Instructions -1 below ****]
+4. After the successful execution of above command, execute - "source activate rasa"
+        This command will activate the new python virtual environment called 'rasa'. You can see the python environment name ‘rasa’ in the bash interpreter command line.
+5. Now execute the command - "make setupbot"
+        This command will install all the packages , associated dependencies into the newly create virtual environment.  It can take unto 3 - 5 mins depending on the internet speed.
+6. Now execute the command - "make checkbot"
+        This command simply displays the versions of RASA components. The versions displayed must match the following - 
+        **** Rasa NLU Version:  0.15.0
+        **** Rasa Core Version: 0.14.0
+        **** Rasa SDK Version:  0.14.0
+7. Now execute the command "make startbot"
+    This command will train the Rasa chatbot. Both NLU layer and Core models will be trained. Action server will be set up to run on the port - 5055. [*** See the Special-Instructions - 2 below ****]
+8. Now execute the command "make runbot"
+    This command will start the chat bot in command line interface mode. Pleas make sure the Action server is running on the other terminal while running the chat bot in terminal. 
 
-# install latest version of rasa core
-pip install rasa_core
-python3 -c "import rasa_core; print(rasa_core.__version__)"
+Special-Instructions:
+====================
+1. It is assumed, that the python environments on the user system are under 'Anaconda' and hence 'Conda' is used to create new virtual environment. If base python is not under 'anaconda', then please use equivalent 'virtualenv' commands.
+2. Please ensure that there is no process running on port 5055. RASA action server is designed to run on 5055.If the server start up fails because of any other service running on the port, please kill the existing process and retry. 
 
-# install latest version of rasa core sdk
-pip install rasa_core_sdk
-python3 -c "import rasa_core_sdk; print(rasa_core.__version__)"
-
-# install other libraries
-pip install beautifulsoup4
-pip install pandas
-pip install Flask-Mail
-
-python dialogue_management_model.py
-```
-## NLU
-### To train nlu model
-```
-python nlu_model.py
-```
-### To run nlu model over http
-```
-python App_nlu.py
-```
-## Core
-### To train core model
-```
-python train_init.py
-```
-### To test conversation via cli
-```
-python dialogue_management_model.py
-```
-### To train core model online
-```
-python train_online.py
-```
+Changes being done for Future Release:
+======================================
+1) Ease the budget slots, location restrictions and allow greater freedom around budgetting to user.
+2) Host the RASA action server on EC2 (cloud) for greater reach.
+3) Add 'Cuisine Dish' level selection.
+3) Changes around more engaging conversations 

@@ -27,4 +27,4 @@ def run_nlu():
 
 if __name__ == '__main__':
 	train_nlu('./data/data.json', 'config_spacy.json', './models/nlu')
-	run_nlu()
+#	run_nlu()
