@@ -70,7 +70,8 @@ palakkad
 patna
 pondicherry
 prayagraj
-puneraipur
+pune
+raipur
 rajkot
 rajahmundry
 ranchi
