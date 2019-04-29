@@ -48,7 +48,7 @@ templates:
   utter_goodbye:
     - "Good bye for now. I am still listening if you want more exploration :)"
     - "So, all sorted!. I am still here if you change your mind :)"
-    - "Glad I could help! I am still listening if you need me :)"
+    - "Glad I could help!"
     - "See you soon if you change your mind :)"
     - "Looking forward to help you again!"
   utter_youarewelcome:
@@ -77,6 +77,8 @@ templates:
         payload: "mexican"
       - title: "Italian"
         payload: "italian"
+      - title: "American"
+        payload: "american"
       - title: "South Indian"
         payload: "south_indian"
       - title: "North Indian"
