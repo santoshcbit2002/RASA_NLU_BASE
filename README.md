@@ -2,7 +2,7 @@ Introduction:
 =============
 FoodieBot - a restaurant search bot engages conversation with users. Based on the location, cuisinie and specific budget slots that user chooses, the bot presents Top 5 results on the chat window. If user wishes, Top 10 results will be emailed to the user.
 
-A detailed demonstration of Bot working on Slack can be found on youtube at: 
+A detailed demonstration of Bot working on Slack can be found on youtube at: https://youtu.be/pk8dYb_sg-U
 
 The chat bot is built on RASA NLU and CORE architecture, running on Python 3.6.0 version. The setup instructions are below. 
 
