@@ -21,19 +21,16 @@ Detailed Setup Instructions:
         **** Rasa NLU Version:  0.15.0
         **** Rasa Core Version: 0.14.0
         **** Rasa SDK Version:  0.14.0
-7. Now execute the command "make startbot"
-    This command will train the Rasa chatbot. Both NLU layer and Core models will be trained. Action server will be set up to run on the port - 5055. [*** See the Special-Instructions - 2 below ****]
-8. Now execute the command "make runbot"
-    This command will start the chat bot in command line interface mode. Pleas make sure the Action server is running on the other terminal while running the chat bot in terminal. 
+7. Now execute the command "make runbot"
+    This command will start the chat bot in command line interface mode. 
 
 Special-Instructions:
 ====================
 1. It is assumed, that the python environments on the user system are under 'Anaconda' and hence 'Conda' is used to create new virtual environment. If base python is not under 'anaconda', then please use equivalent 'virtualenv' commands.
-2. Please ensure that there is no process running on port 5055. RASA action server is designed to run on 5055.If the server start up fails because of any other service running on the port, please kill the existing process and retry. 
 
 Changes being done for Future Release:
 ======================================
 1) Ease the budget slots, location restrictions and allow greater freedom around budgetting to user.
 2) Host the RASA action server on EC2 (cloud) for greater reach.
 3) Add 'Cuisine Dish' level selection.
-3) Changes around more engaging conversations 
+4) Changes around more engaging conversations 
